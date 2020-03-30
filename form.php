@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,29 +6,19 @@
     <title>Document</title>
 </head>
 <body>
+<form method="get">
+    <input type="text" name="mail"></input>
+    <button>verstuur</button>
+    <?php 
+    if(isset($_GET['mail'])&& !empty($_GET['mail'])){
+        if(filter_var($_GET['mail'], FILTER_VALIDATE_EMAIL)){
+            echo "dit email addres is geldig";
+        }else{
+            echo "dit email addres is niet geldig";
+        }
+    }
    
-<form action="" method="post" class="form-example">
-<div class="form-example">
-  <label for="email">Enter your email: </label>
-  <input type="text" name="email" id="email" required>
-  <button type="submit">
-      Verzenden
-    </button>
-</form> 
-</body>
-
+    ?>
+</form>
+<body>
 </html>
-
-<?php
-$email = "kimberly@example.com";
-
-
-$email = filter_var($email, FILTER_SANITIZE_EMAIL);
-
-
-if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    echo("$email is a valid email address");
-} else {
-    echo("$email is not a valid email address");
-}
-?>
