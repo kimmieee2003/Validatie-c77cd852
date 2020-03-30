@@ -13,7 +13,7 @@
     if (isset($_GET['mail']) && !empty($_GET['mail'])) {
         if (filter_var($_GET['mail'], FILTER_VALIDATE_EMAIL)) {
             echo "dit email addres is geldig";
-        }else {
+        } else {
             echo "dit email addres is niet geldig";
         }
     }
